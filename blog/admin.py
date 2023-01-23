@@ -1,15 +1,21 @@
 from django.contrib import admin
-from .models import Post, Tag
+from django.db import models
+from .models import Careers, Tag, Category
+
+
+
+
 
 class TagInline(admin.TabularInline):
-    model = Post.tags.through
+    model = Careers.tags.through
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
-    list_filter = ("status",)
+@admin.register(Careers)
+class CareersAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'type','created_on')
+    list_filter = ("type",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     inlines = [TagInline]
     
 admin.site.register(Tag)
+admin.site.register(Category)

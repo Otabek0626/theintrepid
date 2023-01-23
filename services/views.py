@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from .models import Service
+import random
 # Create your views here.
 def service(request):
     services = Service.objects.all()
-
-    render(request, 'services.html', {'services' : services})
+    context = {
+        'timer': 600,
+        'services': services,
+        'colors': ['pink', 'orange', 'green', 'red', 'blue', 'purple']
+    }
+    return render(request, 'services.html', context)
