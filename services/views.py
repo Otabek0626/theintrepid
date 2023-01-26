@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Service
-import random
+
 # Create your views here.
 def service(request):
     services = Service.objects.all()
+    
     context = {
         'timer': 600,
         'services': services,
