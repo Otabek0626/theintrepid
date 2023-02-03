@@ -1,0 +1,461 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Intrepid.</title>
+{%endblock%}
+
+
+{%block hero %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Welcome to <span>Intrepid.</span></h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Expertise, Reliability, Results: Your Outsourcing Partner</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+{%endblock%}
+  
+{%block content %}
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Who We Are</h3>
+              <h2>Partnering for success, delivering excellence.</h2>
+              <p>
+                Intrepid IT Outsourcing is a premier provider of high-quality IT services to companies of all sizes. Our team of experienced and dedicated professionals is committed to helping our clients achieve their business goals through the use of cutting-edge technology. We specialize in software development, IT consulting, and support, as well as a wide range of other IT solutions tailored to meet the unique needs of our clients.  
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="{% url 'about' %}" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center about-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Values</h2>
+          <p>Partnering for success, delivering excellence.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="{% static 'img/values-1.png' %}" class="img-fluid" alt="">
+              <h3>Quality</h3>
+              <p>We strive for excellence in everything we do and are committed to delivering high-quality work to our clients.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="{% static 'img/values-2.png' %}" class="img-fluid" alt="">
+              <h3>Responsiveness</h3>
+              <p>We are dedicated to providing timely and effective solutions to our clients and are always available to address their concerns.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="{% static 'img/values-3.png' %}" class="img-fluid" alt="">
+              <h3>Continuous Improvement.</h3>
+              <p>We are committed to continuous learning and improvement to deliver the best possible services to our clients.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Values Section -->
+
+    <!-- ======= Counts Section ======= -->
+ 
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Featured Services</h2>
+          
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <img src="{% static 'img/features.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+            <div class="row align-self-center gy-4">
+
+              {%for service in services%}
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-check"></i>
+                  <h3>{{service.name}}</h3>
+                </div>
+              </div>
+      
+            {%endfor%}
+            </div>
+          </div>
+
+        </div> <!-- / row -->
+
+        <section id="counts" class="counts">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="row gy-4">
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i class="bi bi-emoji-smile"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Happy Clients</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Projects</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i class="bi bi-headset" style="color: #15be56;"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Hours Of Support</p>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                  <i class="bi bi-people" style="color: #bb0852;"></i>
+                  <div>
+                    <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Hard Workers</p>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Counts Section -->
+    
+        <!-- Feature Icons -->
+        <div class="row feature-icons" data-aos="fade-up">
+          <h3>Benefits</h3>
+
+          <div class="row">
+
+            <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+              <img src="{% static 'img/features-3.png' %}" class="img-fluid p-4" alt="">
+            </div>
+
+            <div class="col-xl-8 d-flex content">
+              <div class="row align-self-center gy-4">
+
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="ri-line-chart-line"></i>
+                  <div>
+                    <h4>Increased efficiency</h4>
+                    <p>Outsourcing certain tasks can help businesses become more efficient by allowing them to focus on their core competencies.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="ri-stack-line"></i>
+                  <div>
+                    <h4>Increased scalability</h4>
+                    <p>Outsourcing allows companies to scale their operations quickly and easily, without the need to invest in additional infrastructure or staff.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="ri-brush-4-line"></i>
+                  <div>
+                    <h4>Cost savings</h4>
+                    <p>Outsourcing can help businesses reduce costs by eliminating the need to hire and train additional staff.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="ri-magic-line"></i>
+                  <div>
+                    <h4>24/7 availability</h4>
+                    <p>Outsourcing companies are often able to provide services around the clock, which can be especially useful for businesses that operate in multiple time zones or need to meet tight deadlines.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="ri-command-line"></i>
+                  <div>
+                    <h4>Time savings</h4>
+                    <p>Outsourcing certain tasks can free up time for businesses to focus on other important aspects of their operations.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                  <i class="ri-radar-line"></i>
+                  <div>
+                    <h4>Improved quality</h4>
+                    <p>Outsourcing companies are often able to provide high-quality work that meets or exceeds the standards of in-house staff.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- End Feature Icons -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+  
+    
+
+ <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Testimonials</h2>
+          <p>What they are saying about us</p>
+        </header>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  "Working with Intrepid IT Outsourcing has been a game-changer for our company. We were in need of a reliable and experienced IT partner to help us take our business to the next level and they delivered beyond our expectations. Their team of experts helped us to identify areas where technology could improve our business operations and provided us with a plan to implement the necessary solutions"  
+                </p>
+                <div class="profile mt-auto">
+                  <img src="img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  "Intrepid IT Outsourcing exceeded our expectations when it came to designing and developing the frontend of our web application. Their team of experienced frontend developers was able to take our vision and turn it into a reality. They were very professional and knowledgeable in their approach, and were always available to answer any questions we had."  
+                </p>
+                <div class="profile mt-auto">
+                  <img src="img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  "Intrepid IT Outsourcing has been an invaluable partner to our Smart Computing department at Kyungdong University. Their AI expertise and website optimization services have helped us to stay at the forefront of our field. Their team of experts was able to understand our unique research needs and deliver solutions that were both cutting-edge and practical."  
+                </p>
+                <div class="profile mt-auto">
+                  <img src="img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  "Intrepid IT Outsourcing has been an invaluable partner for our company in the field of AI and parallel computing. Their team of experts have helped us to design and develop advanced systems that have greatly improved our data processing capabilities and overall performance. Their knowledge and experience in AI and parallel computing is truly impressive, and they have been able to provide us with solutions that are not only innovative but also cost-effective." 
+                </p>
+                <div class="profile mt-auto">
+                  <img src="img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <h3>John Larson</h3>
+                  <h4>Entrepreneur</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Team</h2>
+          <p>Our hard working team</p>
+        </header>
+
+        <div class="row gy-4">
+          {%for person in team%}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="{{person.img.url}}" class="img-fluid" alt="">
+                <div class="social">
+                  
+                  <a href="{{person.linkedin}}"><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{person.name}}</h4>
+                <span>{{person.job}}</span>
+                </div>
+            </div>
+          </div>
+          {%endfor%}
+       
+
+
+        </div>
+
+      </div>
+
+    </section><!-- End Team Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Clients</h2>
+        </header>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'img/clients/client-1.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/client-2.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/client-3.gif' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/client-5.jpg' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </section><!-- End Clients Section -->
+
+
+    {% include 'components/contact.html'%}
+   {%endblock%}
+
+
+  <!-- ======= Footer ======= -->
+  {% include 'components/footer.html'%}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.j' %}s"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
