@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+<title>Our Services</title>
+{% endblock %}
+
+{% block content %}
+<!-- Hero section -->
+<style>
+  #hero{
+      width: 100%;
+    height: 100vh;
+      font-family: "Poppins", sans-serif;
+  }
+  </style>
+<section id="hero" class=" p-5 hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Services</span></h1>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+           
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img mt-5" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <section id="services" class="services">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Services</h2>
+        <p>Partnering for success, delivering excellence.</p>
+      </header>
+    
+      <div class="row gy-4">
+       
+       <script type="text/javascript">
+            
+              
+       </script>
+        {%for service in services%}
+        
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            
+          <div class="service-box">
+            
+            <i class="icon"></i>
+          
+           
+            <h3>{{service.name}}</h3>
+            <p>{{service.desc}}</p>
+            
+          </div>
+        </div>
+
+      {%endfor%}
+      <script type="text/javascript">
+        const colors = ["pink", "orange", "purple", "red", "green", "blue"];
+       const icons = ['bi bi-cpu', 'ri-stack-line', 'ri-command-line', 'ri-radar-line', 'ri-brush-4-line', 'ri-line-chart-line', 'ri-discuss-line']
+            
+        var box = document.querySelectorAll('.service-box');
+        console.log(box)
+        box.forEach( item => item.classList.add(colors.pop()))
+        
+      var icon = document.querySelectorAll('.icon');
+      icon.forEach( item => item.classList.add(icons.pop())
+        )
+        
+        
+     </script>
+
+      </div>
+
+    </div>
+
+  </section><!-- End Services Section -->
+
+{% endblock %}

@@ -11,10 +11,21 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+env.read_env(env.str(BASE_DIR, '.env'))
 
+#DATBASE SETTINGS
+POSTGRES_DB_HOST=env('POSTGRES_DB_HOST')
+POSTGRES_DB_PORT=env('POSTGRES_DB_PORT')
+POSTGRES_DB_USER=env('POSTGRES_DB_USER')
+POSTGRES_DB_PASSWORD=env('POSTGRES_DB_PASSWORD')
+POSTGRES_DB_NAME=env('POSTGRES_DB_NAME')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -31,12 +42,17 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'services.apps.ServicesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'blog',
+    'home',
+    'djmoney'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +70,7 @@ ROOT_URLCONF = 'intrepid.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +91,21 @@ WSGI_APPLICATION = 'intrepid.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME' : POSTGRES_DB_NAME,
+        'USER': POSTGRES_DB_USER,
+        'PASSWORD': POSTGRES_DB_PASSWORD,
+        'HOST' : POSTGRES_DB_HOST,
+        'PORT': POSTGRES_DB_PORT
+
+        #local
+        # 'NAME' : 'intrepid',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 1234,
+        # 'HOST' :  'localhost',
+        # 'PORT': POSTGRES_DB_PORT
+
+
     }
 }
 
@@ -117,6 +146,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

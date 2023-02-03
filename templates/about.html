@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>About us - Intrepid IT Solutions</title>
+{% endblock %}
+
+{% block content %}
+<!-- Hero section -->
+<style>
+#hero{
+    width: 100%;
+  height: 50vh;
+    font-family: "Poppins", sans-serif;
+}
+</style>
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+          <h1 data-aos="fade-up"><span>About Us</span></h1>
+          <h4 data-aos="fade-up" data-aos-delay="400" class="mt-5">Welcome to Intrepid IT Outsourcing, a premier provider of high-quality IT services to companies of all sizes. </h4>
+        </div>
+       
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+  
+
+  <section id="about" class="about">
+    <header class="section-header" data-aos="fade-up">
+        <p>"Excelling, innovating, and building trust through ethical practices."</p>
+      </header>
+    <div class="container" data-aos="fade-up">
+      <div class="row gx-0 justify-content-center align-items-center">
+       
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="content d-flex flex-column justify-content-center align-items-center">
+            <h2>Who We Are</h2>   
+            <p>
+                At Intrepid IT Outsourcing, we believe in building long-term partnerships with our clients. Our team of experts will work closely with you to understand your business needs and goals, and then design and implement a solution that is tailored to your specific requirements. We take pride in our ability to deliver high-quality services at competitive prices, and we stand behind our work with a satisfaction guarantee.
+            </p>
+          <p>
+            If you're looking for a reliable and experienced IT partner that can help you achieve your business goals, look no further than Intrepid IT Outsourcing. Contact us today to learn more about our services and how we can help your company succeed.
+          </p>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+
+  </section><!-- End About Section -->
+
+  <section id="values" class="values">
+
+    <div class="container" data-aos="fade-up">
+
+    
+      <div class="row">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="box">
+            <img src="{% static 'img/values-1.png' %}" class="img-fluid" alt="">
+            <h3>What We Do</h3>
+            <p>As a Managed Service Provider, Intrepid IT Outsourcing is dedicated to aligning cutting-edge IT advancements with business objectives. Our expert team delivers cost-effective solutions that optimize output, allowing businesses to reach their full potential. </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+          <div class="box">
+            <img src="{% static 'img/values-2.png' %}" class="img-fluid" alt="">
+            <h3>Who We Help</h3>
+            <p>At Intrepid IT Outsourcing, we turn technology into a competitive advantage for your business. Our team of experts combine smart technologies with your strengths to achieve winning results. Let us bridge the information gap, and empower your business to thrive in any market condition.</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+          <div class="box">
+            <img src="{% static 'img/values-3.png' %}" class="img-fluid" alt="">
+            <h3>Why Choose Us</h3>
+            <p>At Intrepid IT Outsourcing, we believe in building long-term partnerships with our clients. Our team of experts will work closely with you to understand your business needs and goals, and then design and implement a solution that is tailored to your specific requirements.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+    
+{% endblock %}
